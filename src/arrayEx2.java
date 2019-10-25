@@ -12,22 +12,29 @@ import java.util.Scanner;
 
 public class arrayEx2 {
     public static void main(String[] args) {
+        Scanner keybd = new Scanner(System.in);
+        int sum = 0, usrNo = 0;
+        double ave;
 
 
-        int sum = 0;
-        float ave;
-        int numbers[] = new int[10];
+        System.out.println("how many numbers would you like to enter?");
+        usrNo= keybd.nextInt();
+        keybd.nextLine();
+
+
         // to populate array with ten numbers from user
-        for (int i = 0; i < 10; i++) {
+        int numbers[] = new int[usrNo];
+        for (int i = 0; i < usrNo; i++) {
             System.out.println("enter number:");
-            Scanner keybd = new Scanner(System.in);
+
             int userIn = keybd.nextInt();
+            keybd.nextLine();
             numbers[i] = userIn;
             sum = sum + numbers[i];
          //   System.out.println("sum is " + sum);
         }
       //  System.out.println("sum is " + sum);
-        ave = (sum / 10);
+        ave = sum / (usrNo*1.0);
         System.out.println("sum is " + sum);
         System.out.println("average is " + ave);
 
